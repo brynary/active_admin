@@ -1,20 +1,12 @@
 ## Master (unreleased)
 
-### Enhancements
-
-* Created new view components (Footer, TitleBar, Header, UtilityNav) to more
-  easily customize the views in Active Admin and per namespace. (@gregbell)
-* All CSS is now encapsulated under the `body.active_admin` class. This may
-  change the precedence of styles that you created to override or use in
-  other areas of your application.
-
 ### Deprecations
 
-* Removed all references to ActiveAdmin::Renderer. If you were using these
+- Removed all references to ActiveAdmin::Renderer. If you were using these
   please update code to use an Arbre component. Removed
   `ActiveAdmin:Views::HeaderRender` and replaced with
   `ActiveAdmin::Views::Header` component.
-* ActiveAdmin::Menu and ActiveAdmin::MenuItem API has changed. If you were
+- ActiveAdmin::Menu and ActiveAdmin::MenuItem API has changed. If you were
   creating custom menu items, the builder syntax has changed to. Menu#add now
   accepts a MenuItem, instead of building the menu item for you.
 
@@ -22,214 +14,211 @@
 
 ### Dependencies
 
-* Use `formtastic` ~> 2.1.1 until AA 0.5.0 is released
-* Use `inherited_resources` >= 1.3.1 (ensure flash messages work)
+- Use `formtastic` ~> 2.1.1 until AA 0.5.0 is released
+- Use `inherited_resources` >= 1.3.1 (ensure flash messages work)
 
 ## 0.4.3
 
 ### Bug Fixes
 
-* [#1063][]: Fix comment issues when using postgres ([@jancel][])
+- [#1063][]: Fix comment issues when using postgres ([@jancel][])
 
 ## 0.4.2
 
 ### Enhancements
 
-* [#822][]: Automatically include js and css to precompile list ([@jschwindt][])
-* [#1033][]: Site title accepts a proc that is rendered in the context
-         of the view ([@pcreux][])
-* [#70][]: Form blocks are now rendered within the context of the view ([@gregbell][])
-* [#70][]: Filter's collections are now eval'd in the context of the view ([@gregbell][])
-* [#1032][]: The html body now includes a class for the namespace name ([@mattvague][])
-* [#1013][]: Hide the count from one specific scope using `:show_count => false`
-         ([@latortuga][])
-* [#1023][]: Add localization support for comments ([@MoritzMoritz][])
+- [#822][]: Automatically include js and css to precompile list ([@jschwindt][])
+- [#1033][]: Site title accepts a proc that is rendered in the context
+  of the view ([@pcreux][])
+- [#70][]: Form blocks are now rendered within the context of the view ([@gregbell][])
+- [#70][]: Filter's collections are now eval'd in the context of the view ([@gregbell][])
+- [#1032][]: The html body now includes a class for the namespace name ([@mattvague][])
+- [#1013][]: Hide the count from one specific scope using `:show_count => false`
+  ([@latortuga][])
+- [#1023][]: Add localization support for comments ([@MoritzMoritz][])
 
 ### Bug Fixes
 
-* [#34][]: Comments now work with models using string ids ([@jancel][])
-* [#1041][]: When `table_for` collection is empty it no longer outputs
-         a blank array in Ruby 1.9 ([@jancel][], [#1016][])
-* [#983][]: Fixed compatibility with pry-rails ([@pcreux][])
-* [#409][]: Install generator handles custom class names for user ([@gregbell][])
+- [#34][]: Comments now work with models using string ids ([@jancel][])
+- [#1041][]: When `table_for` collection is empty it no longer outputs
+  a blank array in Ruby 1.9 ([@jancel][], [#1016][])
+- [#983][]: Fixed compatibility with pry-rails ([@pcreux][])
+- [#409][]: Install generator handles custom class names for user ([@gregbell][])
 
 ### Contributors
 
 42 Commits by 10 authors
 
-* Allen Huang
-* Daniel Lepage
-* Thibaut Barrère
-* Drew Ulmer
-* Juan Schwindt
-* Moritz Behr
-* Jeff Ancel
-* Matt Vague
-* Greg Bell
-* Philippe Creux
-
+- Allen Huang
+- Daniel Lepage
+- Thibaut Barrère
+- Drew Ulmer
+- Juan Schwindt
+- Moritz Behr
+- Jeff Ancel
+- Matt Vague
+- Greg Bell
+- Philippe Creux
 
 ## 0.4.1
 
 ### Enhancements
 
-* [#865][]: Pages support the `#page_action` to add custom controller actions
-        to a page ([@BoboFraggins][])
-* Columns component now supports column spans, max and min widths ([@gregbell][])
-* [#497][]: Custom pagination settings per resource ([@pcreux][])
-* [#993][]: Login form now focuses on email ([@mattvague][])
-* [#865][]: Add `:if` support to sidebar sections ([@BoboFraggins][])
-* [#865][]: Added `:scope_count => false` to the index to hide scope counts
-        in generated scopes ([@BoboFraggins][])
+- [#865][]: Pages support the `#page_action` to add custom controller actions
+  to a page ([@BoboFraggins][])
+- Columns component now supports column spans, max and min widths ([@gregbell][])
+- [#497][]: Custom pagination settings per resource ([@pcreux][])
+- [#993][]: Login form now focuses on email ([@mattvague][])
+- [#865][]: Add `:if` support to sidebar sections ([@BoboFraggins][])
+- [#865][]: Added `:scope_count => false` to the index to hide scope counts
+  in generated scopes ([@BoboFraggins][])
 
 ### Bug Fixes
 
-* [#101][]: Global nav now works with RackBaseURI ([@gregbell][])
-* [#960][]: Global nav works when scoped in rails routes ([@gregbell][])
-* [#994][]: Fix index page check collection.limit(1).exists? causes exception when
-        ordering by virtual colum ([@latortuga][], [@gregbell][])
-* [#971][]: Fix SQL when sorting tables with a column named "group" ([@ggilder][])
+- [#101][]: Global nav now works with RackBaseURI ([@gregbell][])
+- [#960][]: Global nav works when scoped in rails routes ([@gregbell][])
+- [#994][]: Fix index page check collection.limit(1).exists? causes exception when
+  ordering by virtual colum ([@latortuga][], [@gregbell][])
+- [#971][]: Fix SQL when sorting tables with a column named "group" ([@ggilder][])
 
 ### Dependencies
 
-* [#978][]: Support for Inherited Resources 1.3.0 ([@fabiormoura][])
+- [#978][]: Support for Inherited Resources 1.3.0 ([@fabiormoura][])
 
 ### Contributors
 
 75 Commits by 12 authors
 
-* Bruno Bonamin
-* David Radcliffe
-* Dinesh Majrekar
-* Erik Michaels-Ober
-* Fábio Maia
-* Gabriel Gilder
-* Greg Bell
-* Kyle Macey
-* Matt Vague
-* Oldani Pablo
-* Peter Fry
-* Philippe Creux
-* Søren Houen
-
+- Bruno Bonamin
+- David Radcliffe
+- Dinesh Majrekar
+- Erik Michaels-Ober
+- Fábio Maia
+- Gabriel Gilder
+- Greg Bell
+- Kyle Macey
+- Matt Vague
+- Oldani Pablo
+- Peter Fry
+- Philippe Creux
+- Søren Houen
 
 ## 0.4.0
 
 ### Upgrade Notes
 
-If you're running on Rails 3.0.x, make sure to run `rails generate active_admin:assets` 
+If you're running on Rails 3.0.x, make sure to run `rails generate active_admin:assets`
 since we've changed both the CSS and JS files.
 
 ### Deprecations
 
-* In the initializer `config.allow_comments_in = []` is now
+- In the initializer `config.allow_comments_in = []` is now
   `config.allow_comments = true`. Use the new namespace specific configurations
   to allow or disallow configuration within a specific namespace.
-* Removed `Object#to_html` in favour of `to_s`. Any Arbre components
+- Removed `Object#to_html` in favour of `to_s`. Any Arbre components
   implementing a `to_html` method need to be updated to use `to_s` instead.
 
 ### New Features
 
-* Namespace specific configurations in the initializer ([@gregbell][])
-* [#624][]: Set an image as the site title using `config.site_title_image` in the
+- Namespace specific configurations in the initializer ([@gregbell][])
+- [#624][]: Set an image as the site title using `config.site_title_image` in the
   Active Admin initializer. ([@mattvague][])
-* [#758][]: Create a standalone page in Active Admin using
+- [#758][]: Create a standalone page in Active Admin using
   `ActiveAdmin.register_page` ([@pcreux][])
-* [#723][]: Register stylesheets with a media type ([@macfanatic][])
+- [#723][]: Register stylesheets with a media type ([@macfanatic][])
 
 ### Enhancements
 
-* [#428][]: Paginated Collection now supports `:param_name` and `:download_links`.
-  These two additions allow you to use the `paginated_collection` component multiple 
+- [#428][]: Paginated Collection now supports `:param_name` and `:download_links`.
+  These two additions allow you to use the `paginated_collection` component multiple
   times on show screens. ([@samvincent][])
-* [#527][]: Refactored all form helpers to use Formtastic 2([@ebeigarts][])
-* [#551][]: Dashboards can now be conditionally displayed using `:if` ([@samvincent][])
-* [#555][]: scopes now accept `:if`. They only get displayed if the proc returns true ([@macfanatic][])
-* [#601][]: Breadcrumbs are internationalized ([@vairix-ssierra][])
-* [#605][]: Validations on ActiveAdmin::Comment should work with
+- [#527][]: Refactored all form helpers to use Formtastic 2([@ebeigarts][])
+- [#551][]: Dashboards can now be conditionally displayed using `:if` ([@samvincent][])
+- [#555][]: scopes now accept `:if`. They only get displayed if the proc returns true ([@macfanatic][])
+- [#601][]: Breadcrumbs are internationalized ([@vairix-ssierra][])
+- [#605][]: Validations on ActiveAdmin::Comment should work with
   `accepts_nested_attributes_for` ([@DMajrekar ][])
-* [#623][]: Index table can sort on any table using `:sort => 'table.column'` ([@ZequeZ][])
-* [#638][]: Add `:label` option to `status_tag` component ([@fbuenemann][])
-* [#644][]: Added proper I18n support to pagination ([@fbuenemann][])
-* [#689][]: Scopes preserve title when provided as a string ([@macfanatic][])
-* [#711][]: Styles update. Now sexier and more refined design. Redesigned Scopes. Split 
+- [#623][]: Index table can sort on any table using `:sort => 'table.column'` ([@ZequeZ][])
+- [#638][]: Add `:label` option to `status_tag` component ([@fbuenemann][])
+- [#644][]: Added proper I18n support to pagination ([@fbuenemann][])
+- [#689][]: Scopes preserve title when provided as a string ([@macfanatic][])
+- [#711][]: Styles update. Now sexier and more refined design. Redesigned Scopes. Split
   css into smaller files. ([@mattvague][])
-* [#741][]: Default media type of css is now "all" instead of "screen" ([@sftsang][])
-* [#751][]: Pagination numbers work with a custom `[@per_page][]` ([@DMajrekar][])
-* `default_actions` in an index table only display implemented actions ([@watson][])
+- [#741][]: Default media type of css is now "all" instead of "screen" ([@sftsang][])
+- [#751][]: Pagination numbers work with a custom `[@per_page][]` ([@DMajrekar][])
+- `default_actions` in an index table only display implemented actions ([@watson][])
 
 ### Bug Fixes
 
-* [#590][]: Comments now work in the default namespace ([@jbarket][])
-* [#780][]: Fix stack level too deep exception when logout path is setup to use
+- [#590][]: Comments now work in the default namespace ([@jbarket][])
+- [#780][]: Fix stack level too deep exception when logout path is setup to use
   `:logout_path` named route. ([@george][])
-* [#637][]: Fix scope all I18n ([@fbuenemann][])
-* [#496][]: Remove global `Object#to_html` [@ebeigarts][]
-* [#470][], [#154][]: Arbre properly supports blocks that return Numeric values
+- [#637][]: Fix scope all I18n ([@fbuenemann][])
+- [#496][]: Remove global `Object#to_html` [@ebeigarts][]
+- [#470][], [#154][]: Arbre properly supports blocks that return Numeric values
   ([@bobbytables][], [@utkarshkukreti][], [@gregbell][])
-* [#897][]: Fix count display for collections with GROUP BY [@comboy][]
+- [#897][]: Fix count display for collections with GROUP BY [@comboy][]
 
 ### Dependencies
 
-* [#468][]: Removed vendored jQuery. Now depends on the jquery-rails gem. If you're 
-  running Rails 3.0.x (no asset pipeline), make sure to run 
+- [#468][]: Removed vendored jQuery. Now depends on the jquery-rails gem. If you're
+  running Rails 3.0.x (no asset pipeline), make sure to run
   `rails generate active_admin:assets` to generate the correct files. ([@gregbell][])
-* [#527][]: Active Admin now requires Formtastic 2.0 or greater ([@ebeigarts][])
-* [#711][]: Active admin now depends on Bourbon > 1.0.0. If you're using Rails
+- [#527][]: Active Admin now requires Formtastic 2.0 or greater ([@ebeigarts][])
+- [#711][]: Active admin now depends on Bourbon > 1.0.0. If you're using Rails
   3.0.x, make sure to run `rails generate active_admin:assets` to ensure you
   have the correct css files ([@mattvague][])
-* [#869][]: Upgraded Kaminari to >= 0.13.0 and added support for
+- [#869][]: Upgraded Kaminari to >= 0.13.0 and added support for
   `Kaminari.config.page_method_name`. Active Admin should now be happy if
   `will_paginate` is installed with it. ([@j][]-manu)
-* [#931][]: Support for Rails 3.2 added ([@mperham][])
+- [#931][]: Support for Rails 3.2 added ([@mperham][])
 
 ### Contributors
 
 274 commits by 42 authors
 
- * Greg Bell
- * Philippe Creux
- * Matt Vague
- * Felix Bünemann
- * Matthew Brewer
- * Edgars Beigarts
- * Mike Perham
- * Sam Vincent
- * Kieran Klaassen
- * Jonathan Barket
- * Ankur Sethi
- * Dinesh Majrekar
- * comboy
- * Juan E. Pemberthy
- * Leandro Moreira
- * Manu
- * Marc Riera
- * Radan Skorić
- * Rhys Powell
- * Sebastian Sierra
- * Sherman Tsang
- * Szymon Przybył
- * Thomas Watson Steen
- * Tim Habermaas
- * Yara Mayer
- * Zequez
- * asancio
- * emmek
- * Alexey Noskov
- * igmizo
- * Alli
- * Bendik Lynghaug
- * Douwe Homans
- * Eric Koslow
- * Eunsub Kim
- * Garami Gábor
- * George Anderson
- * Henrik Hodne
- * Ivan Storck
- * Jeff Dickey
- * John Ferlito
- * Josef Šimánek
-
+- Greg Bell
+- Philippe Creux
+- Matt Vague
+- Felix Bünemann
+- Matthew Brewer
+- Edgars Beigarts
+- Mike Perham
+- Sam Vincent
+- Kieran Klaassen
+- Jonathan Barket
+- Ankur Sethi
+- Dinesh Majrekar
+- comboy
+- Juan E. Pemberthy
+- Leandro Moreira
+- Manu
+- Marc Riera
+- Radan Skorić
+- Rhys Powell
+- Sebastian Sierra
+- Sherman Tsang
+- Szymon Przybył
+- Thomas Watson Steen
+- Tim Habermaas
+- Yara Mayer
+- Zequez
+- asancio
+- emmek
+- Alexey Noskov
+- igmizo
+- Alli
+- Bendik Lynghaug
+- Douwe Homans
+- Eric Koslow
+- Eunsub Kim
+- Garami Gábor
+- George Anderson
+- Henrik Hodne
+- Ivan Storck
+- Jeff Dickey
+- John Ferlito
+- Josef Šimánek
 
 ## 0.3.4
 
@@ -237,15 +226,15 @@ since we've changed both the CSS and JS files.
 
 ### Bug Fixes
 
-* Fix reloading issues across operating systems.
-* Fix issue where SASS was recompiling on every request. This can seriously
+- Fix reloading issues across operating systems.
+- Fix issue where SASS was recompiling on every request. This can seriously
   decrease the load time of applications when running in development mode.
   Thanks [@dhiemstra][] for tracking this one down!
 
 ### Contributors
 
-* Danny Hiemstra
-* Greg Bell
+- Danny Hiemstra
+- Greg Bell
 
 ## 0.3.3
 
@@ -253,13 +242,13 @@ since we've changed both the CSS and JS files.
 
 ### Enhancements
 
-* Only reload Active Admin when files in the load paths have changed. This is a
+- Only reload Active Admin when files in the load paths have changed. This is a
   major speed increase in development mode. Also helps with memory consumption
   because we aren't reloading Active admin all the time.
 
 ### Contributors
 
-* Greg Bell
+- Greg Bell
 
 ## 0.3.2
 
@@ -267,48 +256,48 @@ since we've changed both the CSS and JS files.
 
 ### Enhancements
 
-* Site title can now be a link. Use config.site_title_link in
+- Site title can now be a link. Use config.site_title_link in
   config/initializers/active_admin.rb
-* i18n support for Japanese
-* i18n support for Bulgarian
-* i18n support for Swedish
+- i18n support for Japanese
+- i18n support for Bulgarian
+- i18n support for Swedish
 
 ### Bug Fixes
 
-* DeviseGenerator respects singular table names
-* Active Admin no longer assumes sass-rails is installed
-* Arbre::Context passes methods to the underlying html which fixes
+- DeviseGenerator respects singular table names
+- Active Admin no longer assumes sass-rails is installed
+- Arbre::Context passes methods to the underlying html which fixes
   issues on different types of servers (and on Heroku)
-* [#45][]: Fix for multibyte characters ([@tricknotes][])
-* [#505][]: Fix titlebar height when no breadcrumb ([@mattvague][])
-* Fixed vertical align in dashboard
-* Fixed i18n path's for multi-word model names
+- [#45][]: Fix for multibyte characters ([@tricknotes][])
+- [#505][]: Fix titlebar height when no breadcrumb ([@mattvague][])
+- Fixed vertical align in dashboard
+- Fixed i18n path's for multi-word model names
 
 ### Dependencies
 
-* Formtastic 2.0.0 breaks Active Admin. Locking to < 2.0.0
+- Formtastic 2.0.0 breaks Active Admin. Locking to < 2.0.0
 
 ### Contributors
 
-* Amiel Martin
-* Christian Hjalmarsson
-* Edgars Beigarts
-* Greg Bell
-* Jan Dupal
-* Joe Van
-* Mark Roghelia
-* Mathieu Martin
-* Matt Vague
-* Philippe Creux
-* Ryunosuke SATO
-* Sam Vincent
-* Trace Wax
-* Tsvetan Roustchev
-* l4u
+- Amiel Martin
+- Christian Hjalmarsson
+- Edgars Beigarts
+- Greg Bell
+- Jan Dupal
+- Joe Van
+- Mark Roghelia
+- Mathieu Martin
+- Matt Vague
+- Philippe Creux
+- Ryunosuke SATO
+- Sam Vincent
+- Trace Wax
+- Tsvetan Roustchev
+- l4u
 
 ## 0.3.1
 
-* Only support InheritedResources up to 1.2.2
+- Only support InheritedResources up to 1.2.2
 
 ## 0.3.0
 
@@ -316,96 +305,95 @@ since we've changed both the CSS and JS files.
 
 ### New Features
 
-* I18n! Now supported in 10 languages!
-* Customizeable CSV ([@pcreux][], [@gregbell][])
-* Menus now support `if` and `priority` (Moritz Lawitschka)
-* Rails 3.1 support
-* Asset pipeline support ([@gregbell][])
-* `skip_before_filter` now supported in DSL ([@shayfrendt][])
-* Added a blank slate design ([@mattvague][])
-* Collection and Member actions use the Active Admin layout ([@gregbell][])
+- I18n! Now supported in 10 languages!
+- Customizeable CSV ([@pcreux][], [@gregbell][])
+- Menus now support `if` and `priority` (Moritz Lawitschka)
+- Rails 3.1 support
+- Asset pipeline support ([@gregbell][])
+- `skip_before_filter` now supported in DSL ([@shayfrendt][])
+- Added a blank slate design ([@mattvague][])
+- Collection and Member actions use the Active Admin layout ([@gregbell][])
 
 ### Enhancements
 
-* Better I18n config file loading ([@fabiokr][])
-* `TableFor` now supports I18n headers ([@fabiokr][])
-* `AttributesTable` now supports I18n attributes ([@fabiokr][])
-* Member actions all use CSS class `member_link` ([@doug316][])
-* Made `status_tag` an Arbre component ([@pcreux][])
-* CSV downloads have sexy names such as "articles-2011-06-21.csv" ([@pcreux][])
-* Created `ActiveAdmin::Setting` to easily create settings ([@gregbell][])
-* New datepicker styles ([@mattvague][])
-* Set `[@page_title][]` in member action to render a custom title ([@gregbell][])
-* [#248][]: Settable logout link options in initializer ([@gregbell][])
-* Added a DependencyChecker that warns if dependencies aren't met ([@pcreux][])
+- Better I18n config file loading ([@fabiokr][])
+- `TableFor` now supports I18n headers ([@fabiokr][])
+- `AttributesTable` now supports I18n attributes ([@fabiokr][])
+- Member actions all use CSS class `member_link` ([@doug316][])
+- Made `status_tag` an Arbre component ([@pcreux][])
+- CSV downloads have sexy names such as "articles-2011-06-21.csv" ([@pcreux][])
+- Created `ActiveAdmin::Setting` to easily create settings ([@gregbell][])
+- New datepicker styles ([@mattvague][])
+- Set `[@page_title][]` in member action to render a custom title ([@gregbell][])
+- [#248][]: Settable logout link options in initializer ([@gregbell][])
+- Added a DependencyChecker that warns if dependencies aren't met ([@pcreux][])
 
 ### Bug Fixes
 
-* [#52][]: Fix update action with STI models ([@gregbell][])
-* [#122][]: Fix sortable columns on nested resources ([@knoopx][])
-* Fix so that Dashboard Sections can appear in root namespace ([@knoopx][])
-* [#131][]: Fixed `status_tag` with nil content ([@pcreux][])
-* [#110][]: Fixed dropdown menu floats in Firefox ([@mattvague][])
-* Use quoted table names ([@krug][])
-* Fixed CSS float of `.paginated_collection_contents` bug in Firefox ([@mattvague][])
-* Removed unwanted gradient in IE in attribute table headers ([@emzeq][])
-* [#222][]: Added `Arbre::Context#length` for Rack servers ([@gregbell][])
-* [#255][]: Fixed problem with dropdown menus in IE8 and IE9 ([@mattvague][])
-* [#235][]: Default sort order should use primary_key ([@gregbell][])
-* [#197][]: Fixed issues with #form params disappearing ([@rolfb][])
-* [#186][]: Fixes for when `default_namespace = false` ([@gregbell][])
-* [#135][]: Comments on STI classes redirect correctly ([@gregbell][])
-* [#77][]: Fixed performance issue where ActiveRecord::Base.all was being called ([@pcreux][])
-* [#332][]: Fixed Devise redirection when in false namespace ([@gregbell][])
-* [#171][]: Fixed issue where class names would clash with HTML object names ([@gregbell][])
-* [#381][]: Fixed issues with Devise < 1.2 ([@pcreux][])
-* [#369][]: Added support for pluralized model names such as News ([@gregbell][])
-* [#42][]: Default forms work with polymorphic associations ([@mattvague][])
+- [#52][]: Fix update action with STI models ([@gregbell][])
+- [#122][]: Fix sortable columns on nested resources ([@knoopx][])
+- Fix so that Dashboard Sections can appear in root namespace ([@knoopx][])
+- [#131][]: Fixed `status_tag` with nil content ([@pcreux][])
+- [#110][]: Fixed dropdown menu floats in Firefox ([@mattvague][])
+- Use quoted table names ([@krug][])
+- Fixed CSS float of `.paginated_collection_contents` bug in Firefox ([@mattvague][])
+- Removed unwanted gradient in IE in attribute table headers ([@emzeq][])
+- [#222][]: Added `Arbre::Context#length` for Rack servers ([@gregbell][])
+- [#255][]: Fixed problem with dropdown menus in IE8 and IE9 ([@mattvague][])
+- [#235][]: Default sort order should use primary_key ([@gregbell][])
+- [#197][]: Fixed issues with #form params disappearing ([@rolfb][])
+- [#186][]: Fixes for when `default_namespace = false` ([@gregbell][])
+- [#135][]: Comments on STI classes redirect correctly ([@gregbell][])
+- [#77][]: Fixed performance issue where ActiveRecord::Base.all was being called ([@pcreux][])
+- [#332][]: Fixed Devise redirection when in false namespace ([@gregbell][])
+- [#171][]: Fixed issue where class names would clash with HTML object names ([@gregbell][])
+- [#381][]: Fixed issues with Devise < 1.2 ([@pcreux][])
+- [#369][]: Added support for pluralized model names such as News ([@gregbell][])
+- [#42][]: Default forms work with polymorphic associations ([@mattvague][])
 
 ### Dependencies
 
-* Switched from will_paginate to  Kaminari for pagination ([@mwindwer][])
-* Removed dependency on InheritedViews ([@gregbell][])
-* Removed Jeweler. Using Bundler and a gemspec ([@gregbell][])
+- Switched from will_paginate to Kaminari for pagination ([@mwindwer][])
+- Removed dependency on InheritedViews ([@gregbell][])
+- Removed Jeweler. Using Bundler and a gemspec ([@gregbell][])
 
 ### Contributors
 
-* Armand du Plessis
-* Aurelio Agundez
-* Bruno Bonamin
-* Chris Ostrowski
-* Corey Woodcox
-* DeLynn Berry
-* Doug Puchalski
-* Fabio Kreusch
-* Greg Bell
-* Ismael G Marin C
-* Jackson Pires
-* Jesper Hvirring Henriksen
-* Josef Šimánek
-* Jørgen Orehøj Erichsen
-* Liborio Cannici
-* Matt Vague
-* Matthew Windwer
-* Moritz Lawitschka
-* Nathan Le Ray
-* Nicolas Mosconi
-* Philippe Creux
-* Rolf Bjaanes
-* Ryan D Johnson
-* Ryan Krug
-* Shay Frendt
-* Steve Klabnik
-* Tiago Rafael Godinho
-* Toby Hede
-* Vijay Dev
-* Víctor Martínez
-* doabit
-* hoverlover
-* nhurst
-* whatthewhat
-* Łukasz Anwajler
-
+- Armand du Plessis
+- Aurelio Agundez
+- Bruno Bonamin
+- Chris Ostrowski
+- Corey Woodcox
+- DeLynn Berry
+- Doug Puchalski
+- Fabio Kreusch
+- Greg Bell
+- Ismael G Marin C
+- Jackson Pires
+- Jesper Hvirring Henriksen
+- Josef Šimánek
+- Jørgen Orehøj Erichsen
+- Liborio Cannici
+- Matt Vague
+- Matthew Windwer
+- Moritz Lawitschka
+- Nathan Le Ray
+- Nicolas Mosconi
+- Philippe Creux
+- Rolf Bjaanes
+- Ryan D Johnson
+- Ryan Krug
+- Shay Frendt
+- Steve Klabnik
+- Tiago Rafael Godinho
+- Toby Hede
+- Vijay Dev
+- Víctor Martínez
+- doabit
+- hoverlover
+- nhurst
+- whatthewhat
+- Łukasz Anwajler
 
 ## 0.2.2 (2011-05-26)
 
@@ -413,50 +401,51 @@ since we've changed both the CSS and JS files.
 
 ### Features & Enhancements
 
-* Arbre includes self closing tags ([#100][])
-* Controller class & action added to body as CSS classes ([#99][])
-* HAML is not required by default ([#92][])
-* Devise login now respects Devise.authentication_keys ([#69][])
-* Active Admin no longer uses <tt>ActiveRecord::Base#search</tt> ([#28][])
-* Resource's can now override the label in the menu ([#48][])
-* Subdirectories are now loaded in the Active Admin load path
+- Arbre includes self closing tags ([#100][])
+- Controller class & action added to body as CSS classes ([#99][])
+- HAML is not required by default ([#92][])
+- Devise login now respects Devise.authentication_keys ([#69][])
+- Active Admin no longer uses <tt>ActiveRecord::Base#search</tt> ([#28][])
+- Resource's can now override the label in the menu ([#48][])
+- Subdirectories are now loaded in the Active Admin load path
 
 ### Bug Fixes
 
-* Sort order now includes table name ([#38][])
-* Fixed table_for 'odd', 'even' row classes ([#96][])
-* Fixed Devise installation if AdminUser already exists ([#95][])
-* Fixed issues when ActiveAdmin.default_namespaces is false ([#32][])
-* Added styles for missing HTML 5 inputs ([#31][])
-* Fixed issue if adding empty Active Admin Comment ([#21][])
-* Fixed layout issues in FF 4 ([#22][])
-* Use Sass::Plugin.options[:css_location] instead of Rails.root ([#55][])
+- Sort order now includes table name ([#38][])
+- Fixed table_for 'odd', 'even' row classes ([#96][])
+- Fixed Devise installation if AdminUser already exists ([#95][])
+- Fixed issues when ActiveAdmin.default_namespaces is false ([#32][])
+- Added styles for missing HTML 5 inputs ([#31][])
+- Fixed issue if adding empty Active Admin Comment ([#21][])
+- Fixed layout issues in FF 4 ([#22][])
+- Use Sass::Plugin.options[:css_location] instead of Rails.root ([#55][])
 
 ### Test Suite
 
-* Update RSpec to latest & fix specs (Thanks Ben Marini & Jeremt Ruppel!) ([#100][])
-* Added tests for STI models ([#52][])
+- Update RSpec to latest & fix specs (Thanks Ben Marini & Jeremt Ruppel!) ([#100][])
+- Added tests for STI models ([#52][])
 
 ### Contributors
 
-* Ben Marini
-* Bookis Smuin
-* Caley Woods
-* Doug Puchalski
-* Federico Romero
-* Greg Bell
-* Ian MacLeod
-* Jeremy Ruppel
-* Jordan Sitkin
-* Juha Suuraho
-* Mathieu Martin
-* Paul Annesley
-* Philippe Creux
+- Ben Marini
+- Bookis Smuin
+- Caley Woods
+- Doug Puchalski
+- Federico Romero
+- Greg Bell
+- Ian MacLeod
+- Jeremy Ruppel
+- Jordan Sitkin
+- Juha Suuraho
+- Mathieu Martin
+- Paul Annesley
+- Philippe Creux
 
 ## 0.2.1 (2011-05-12)
 
 ### Bug Fixes
-* Fixed issue with dashboard rendering a sidebar
+
+- Fixed issue with dashboard rendering a sidebar
 
 ## 0.2.0 (2011-05-12)
 
@@ -465,26 +454,27 @@ of the highlights. 250 commits. Enough said.
 
 ### Features & Enhancements
 
-* Full visual redesign
-* Integrated Devise for authentication
-* Brand new view and component layer called Arbre (Project coming soon)
-* Added ActiveAdmin::Comments
+- Full visual redesign
+- Integrated Devise for authentication
+- Brand new view and component layer called Arbre (Project coming soon)
+- Added ActiveAdmin::Comments
 
 ### Bug Fixes
 
-* Too many to list! Been in production for close to a year
+- Too many to list! Been in production for close to a year
 
 ## 0.1.1 (2010-09-15)
 
 ### Bug Fixes
 
-* Fixed issues running on Ruby 1.9.2
+- Fixed issues running on Ruby 1.9.2
 
 ## 0.1.0
 
-* Initial release
+- Initial release
 
 <!--- The following link definition list is generated by PimpMyChangelog --->
+
 [#21]: https://github.com/gregbell/active_admin/issues/21
 [#22]: https://github.com/gregbell/active_admin/issues/22
 [#28]: https://github.com/gregbell/active_admin/issues/28
